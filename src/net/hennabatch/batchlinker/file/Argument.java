@@ -14,18 +14,4 @@ public class Argument {
 	public Argument create(String... argsIn) {
 		return new Argument(argsIn);
 	}
-
-	private enum Option{
-
-		OUTPUT("o"),
-		CHARSET("c");
-
-
-		private String argSwitch;
-
-		private Option(String argSwitchIn) {
-			this.argSwitch = argSwitchIn;
-		}
-	}
-
 }
