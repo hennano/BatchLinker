@@ -1,9 +1,26 @@
 package net.hennabatch.batchlinker;
 
+import net.hennabatch.batchlinker.option.Argument;
+
 public class BatchLinker {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+		try {
+			Argument arg = Argument.create(args);
+
+
+
+
+
+
+
+
+
+
+
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }
