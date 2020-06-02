@@ -1,0 +1,2 @@
+# BatchLinker
+windows batファイルをリンクして一つのファイルにまとめるやつ
