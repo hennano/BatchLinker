@@ -3,6 +3,7 @@ package net.hennabatch.batchlinker.file;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 import net.hennabatch.batchlinker.option.Argument;
@@ -27,9 +28,17 @@ public class BatchFile {
 	public List<String> getLines() {
 		return lines;
 	}
-	
+
 	public List<BatchPath> getCallPaths(){
-		
+		List<BatchPath> paths = new ArrayList<BatchPath>();
+
+		return paths;
+	}
+
+	public List<String> getLabels(){
+		List<String> labels = new ArrayList<String>();
+
+		return labels;
 	}
 
 }
