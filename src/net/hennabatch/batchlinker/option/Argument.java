@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import net.hennabatch.batchlinker.util.FileUtils;
 
@@ -28,5 +29,10 @@ public class Argument {
 
 	public List<Option> getOptions() {
 		return options;
+	}
+
+	public List<String> getOptionArgs(EnumOption option){
+		List<Option> opt = options.stream().filter(x -> x.getOption().equals(option)).collect(Collectors.toList());
+		return opt.size() == 1 ? opt.get(0).getArgs() : null;
 	}
 }
