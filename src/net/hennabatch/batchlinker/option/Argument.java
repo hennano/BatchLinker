@@ -6,22 +6,24 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import net.hennabatch.batchlinker.util.FileUtils;
+
 public class Argument {
 
-	private Path mainFileAbsolutePath;
+	private Path mainFileRealPath;
 	private List<Option> options;
 
 	private Argument(Path mainFileAbsolutePathIn, List<Option> optionsIn) {
-		this.mainFileAbsolutePath = mainFileAbsolutePathIn;
+		this.mainFileRealPath = mainFileAbsolutePathIn;
 		this.options = optionsIn;
 	}
 
 	public static Argument create(String[] args) throws IllegalArgumentException, IOException{
-		return new Argument(Paths.get(args[0]).normalize().toAbsolutePath(), Option.readOptions(Arrays.copyOfRange(args, 1, args.length)));
+		return new Argument(FileUtils.getRealBatchPath(Paths.get(args[0])), Option.readOptions(Arrays.copyOfRange(args, 1, args.length)));
 	}
 
-	public Path getMainFileAbsolutePath() {
-		return mainFileAbsolutePath;
+	public Path getMainFileRealPath() {
+		return mainFileRealPath;
 	}
 
 	public List<Option> getOptions() {
